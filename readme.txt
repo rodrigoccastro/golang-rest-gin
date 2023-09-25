@@ -8,5 +8,9 @@
 =======================================================
 
 call endpoints:
-http://127.0.0.1:8090/api/client/list
-http://127.0.0.1:8090/api/client/find?id=2
+http://localhost:8090/api/client/list
+http://localhost:8090/api/client/find/1
+
+
+http://localhost:8090/api/seller/list
+http://localhost:8090/api/seller/find/1

@@ -8,10 +8,12 @@ import (
 )
 
 func serviceClientList() gin.H {
-	db := getDb()
-	defer db.Close()
+	rows, err := DB.Query("SELECT * FROM clients order by id asc")
 
-	rows, _ := db.Query("SELECT * FROM clients order by id asc")
+	if err != nil {
+		return getResultError(err)
+	}
+	
 	return getDtoClients(rows)
 }
 

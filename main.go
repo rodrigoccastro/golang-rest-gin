@@ -2,26 +2,22 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
-
-func clientList(c *gin.Context) {
-	c.JSON(http.StatusOK, serviceClientList())
-}
-
-func clientFind(c *gin.Context) {
-	c.JSON(http.StatusOK, serviceClientFind(c))
-}
-
 
 func main() {
 	fmt.Println("starting server...")
 	router := gin.Default()
 
-	router.GET("/api/client/list", clientList)
-	router.GET("/api/client/find", clientFind)
+	fmt.Println("starting connection...")
+	startConnection();
+
+	router.GET("/api/client/list", controllerClientList)
+	router.GET("/api/client/find/:id", controllerClientFind)
 	
+	router.GET("/api/seller/list", controllerSellerList)
+	router.GET("/api/seller/find/:id", controllerSellerFind)
+
 	router.Run("localhost:8090")
 }
