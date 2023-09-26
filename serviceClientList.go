@@ -9,7 +9,7 @@ func serviceClientList() gin.H {
 	rows, err := DB.Query("SELECT * FROM clients order by id asc")
 
 	if err != nil {
-		return getResultError(err)
+		return getResultError("serviceClientList", err)
 	}
 	
 	return getDtoClients(rows)

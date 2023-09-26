@@ -9,7 +9,7 @@ func serviceClientFind(id string) gin.H {
 	rows, err := DB.Query("SELECT * FROM clients where id=$1",id)
 
 	if err != nil {
-		return getResultError(err)
+		return getResultError("serviceClientFind", err)
 	}
 	
 	if rows.Next() {

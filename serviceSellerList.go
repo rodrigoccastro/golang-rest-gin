@@ -11,7 +11,7 @@ func serviceSellerList() gin.H {
 	rows, err := DB.Query("SELECT * FROM sellers order by id asc")
 
 	if err != nil {
-		return getResultError(err)
+		return getResultError("serviceSellerList", err)
 	}
 	
 	return getDtoSellers(rows)

@@ -9,7 +9,7 @@ func serviceSellerFind(id string) gin.H {
 	rows, err := DB.Query("SELECT * FROM sellers where id=$1",id)
 
 	if err != nil {
-		return getResultError(err)
+		return getResultError("serviceSellerFind", err)
 	}
 	
 	if rows.Next() {

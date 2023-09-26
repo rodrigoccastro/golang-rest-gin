@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -20,7 +21,10 @@ func getResultDataList(data []gin.H) gin.H {
 		}
 }
 
-func getResultError(err error) gin.H {
+func getResultError(context string, err error) gin.H {
+	fmt.Println("Error in "+context)
+	fmt.Println(err)
+	
 	return gin.H{
 			"time": time.Now(),
 			"error": err,
