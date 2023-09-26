@@ -14,10 +14,10 @@ func main() {
 	startConnection();
 
 	router.GET("/api/client/list", controllerClientList)
-	router.GET("/api/client/find/:id", controllerClientFind)
+	router.GET("/api/client/:id", controllerClientFind)
 	
 	router.GET("/api/seller/list", controllerSellerList)
-	router.GET("/api/seller/find/:id", controllerSellerFind)
+	router.GET("/api/seller/:id", controllerSellerFind)
 
 	router.Run("localhost:8090")
 }
