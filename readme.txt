@@ -1,8 +1,8 @@
 *** refatorar 
-1) fazer list com gourotines e canal...
-2) criar pacotes para classes
-2) propriedades de conexao em arq properties
-3) fazer arquivo de migracao para banco de dados
+1) propriedades de conexao em arq properties
+1) fazer arquivo de migracao para banco de dados
+2) criar arquivo de rotas separadas
+3) criar pacotes para classes
 
 4) fazer case de microservico para save no kafka que salva no mongo
 5) fazer case de microservico para consumer que salva no postgres
@@ -26,10 +26,7 @@
 
 call endpoints:
 http://localhost:8090/api/client/list
-http://localhost:8090/api/client/listGoRoutine
-
 http://localhost:8090/api/client/find/1
-
 
 http://localhost:8090/api/seller/list
 http://localhost:8090/api/seller/find/1
